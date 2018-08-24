@@ -1,6 +1,6 @@
 ---
 title: Off-Heap Memory
-description: 
+description: about the use of off-heap memory
 categories:
 tags:
 ---
