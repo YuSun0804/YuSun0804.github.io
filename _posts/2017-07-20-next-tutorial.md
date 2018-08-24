@@ -34,3 +34,7 @@ long id = us.allocateMemory(1000);
 2. weakness
 - difficult to control(collection)
 - difficult to store complex objects except for byte
+
+#Off-Heap Memory Collection
+![name](../image/off-heap1.png '')
+![name](../image/off-heap2.png '')
