@@ -28,3 +28,5 @@ Direct Buffer
 以前申请Direct Buffer只能通过Unsafe类，并且只能使用发射的方法：
 
 在使用Unsafe类的时候：
+
+`Unsafe f = Unsafe.getUnsafe();`
