@@ -2,16 +2,17 @@
 title: Off-Heap Memory
 description: 
 categories:
- - jvm
 tags:
 ---
 
 # Introduction
 generalized off-heap memory, including:
-- memory used by thread
-+ memory used by jvm
+
+* memory used by thread
+* memory used by jvm
 * memory allocated by JNI
-- memory allocated by Direct Buffer
+* memory allocated by Direct Buffer
+
 narrow off-heap memory only means the memory allocated by Direct Buffer
 
 # Use Off-Heap Memory
