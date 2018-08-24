@@ -36,5 +36,4 @@ long id = us.allocateMemory(1000);
 - difficult to store complex objects except for byte
 
 #Off-Heap Memory Collection
-![name](../image/off-heap1.png '')
-![name](../image/off-heap2.png '')
+![name1]({{ "/image/off-heap2.png" | absolute_url }})
