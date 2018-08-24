@@ -35,5 +35,14 @@ long id = us.allocateMemory(1000);
 - difficult to control(collection)
 - difficult to store complex objects except for byte
 
-#Off-Heap Memory Collection
-![name1]({{ "/image/off-heap2.png" | absolute_url }})
+# Off-Heap Memory Collection
+in young area, hold the reference(DirectByteBuffer) to the direct memory, which is usually to big like iceberg. if the reference object is unreachable, the direct memory will be collected along with the the collection of the reference.
+![off-heap1]({{ "/image/off-heap1.png" | absolute_url }})
+
+after gc promotion, if the DirectByteBuffer object promote to the old area,only full gc can collect the object. without the full gc, it will cause the out of memory error.
+![off-heap1]({{ "/image/off-heap2.png" | absolute_url }})
+
+# Solution
+use System.gc()
+notice: do not use -XX:DisableExplicitGC; use the -XX:ExplicitGCInvokesConcurrent instead of -XX:DisableExplicitGC, if necessary.
+
