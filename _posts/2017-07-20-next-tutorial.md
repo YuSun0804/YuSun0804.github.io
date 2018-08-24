@@ -1,33 +1,27 @@
 ---
-title: off-head memory
+title: Off-Heap Memory
 description: 
 categories:
- - java memory
+ - jvm
 tags:
 ---
 
-广义的堆外内存
--Xmx设置了堆的大小
+# Introduction
+generalized off-heap memory, including:
 
-堆以外的内存都是堆外内存
+- memory used by thread
+- memory used by jvm
+- memory allocated by JNI
+- memory allocated by Direct Buffer
 
-这些内存主要包括：
+narrow off-heap memory only means the memory allocated by Direct Buffer
 
-线程占用内存
+# Use Off-Heap Memory
+1. Unsafe
 
-JVM虚拟机占用内存
-
-JNI分配的内存
-
-Direct Buffer
-
-狭义的堆外内存
-而作为java开发者，我们常说的堆外内存溢出了，其实是狭义的堆外内存，这个主要是指java.nio.DirectByteBuffer在创建的时候分配内存
-
-堆外内存的申请
-以前申请Direct Buffer只能通过Unsafe类，并且只能使用发射的方法：
-
-在使用Unsafe类的时候：
-
-`Unsafe f = Unsafe.getUnsafe();`
-sfa
+(```)
+    Field f = Unsafe.class.getDeclaredField("theUnsafe");
+    f.setAccessible(true);
+    Unsafe us = (Unsafe) f.get(null);
+    long id = us.allocateMemory(1000);
+(```)
