@@ -12,10 +12,10 @@ bash ./get_source.sh
 # Building & Debuging
 
 # Reading Source Code
-![vm_directory]({{ "/assets/images/post/vm_directory.png" | absolute_url |:height="50%" width="50%" }})
+![vm_directory]({ "/assets/images/post/vm_directory.png" | absolute_ur}})
 ## jdk
 jdk source code.
-![vm_directory @2x]({{ "/assets/images/post/jdk_source.png =100x" | absolute_url }})
+![vm_directory @2x]({{ "/assets/images/post/jdk_source.png" | absolute_url }})
 >src/   
   share/       平台无关的实现   
     classes/     平台无关的Java代码实现   
