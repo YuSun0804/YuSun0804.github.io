@@ -12,7 +12,7 @@ bash ./get_source.sh
 # Building & Debuging
 
 # Reading Source Code
-![vm_directory]({{ "/_image/vm_directory.png" | absolute_url }})
+![vm_directory]({{ "/_images/vm_directory.png" | absolute_url }})
 - jdk
 jdk source code.
 >src/
