@@ -1,11 +1,15 @@
 ---
-title: Emoji Test
+title: Build OpenJDK
 tags:
 ---
 
-This is an emoji test. :smile: lol.
+# Download Souce Code
+```
+hg clone http://hg.openjdk.java.net/jdk8/jdk8 YourOpenJDK 
+cd YourOpenJDK 
+bash ./get_source.sh
+```
+# Building & Debuging
 
-See emoji cheat sheet for more detail :wink: : <https://www.webpagefx.com/tools/emoji-cheat-sheet/>.
+# Reading Source Code
 
-:bowtie::smile::laughing::blush::smiley::relaxed::smirk:
-:heart_eyes::kissing_heart::kissing_closed_eyes::flushed::relieved::satisfied::grin:
