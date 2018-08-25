@@ -17,7 +17,7 @@ narrow off-heap memory only means the memory allocated by Direct Buffer
 
 # Use Off-Heap Memory
 1. Unsafe
-```
+```java
 Field f = Unsafe.class.getDeclaredField("theUnsafe");
 f.setAccessible(true);
 Unsafe us = (Unsafe) f.get(null);
