@@ -12,19 +12,17 @@ bash ./get_source.sh
 # Building & Debuging
 
 # Reading Source Code
-![vm_directory]({{ "/_images/vm_directory.png" | absolute_url }})
-- jdk
-
+![vm_directory]({{ "/images/vm_directory.png" | absolute_url }})
+##jdk
 jdk source code.
 >src/
 >  share/       平台无关的实现
 >    classes/     平台无关的Java代码实现
 >    native/      平台无关的native代码实现（主要是C）
 
-- hotspot
-
+## hotspot
 vm source code.
-- langtools
+# langtools
 
 
 
