@@ -14,6 +14,7 @@ bash ./get_source.sh
 # Reading Source Code
 ![vm_directory]({{ "/_images/vm_directory.png" | absolute_url }})
 - jdk
+
 jdk source code.
 >src/
 >  share/       平台无关的实现
@@ -21,6 +22,7 @@ jdk source code.
 >    native/      平台无关的native代码实现（主要是C）
 
 - hotspot
+
 vm source code.
 - langtools
 
