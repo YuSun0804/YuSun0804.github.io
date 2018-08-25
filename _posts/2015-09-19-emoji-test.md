@@ -49,3 +49,7 @@ mainly for tools like java， javah，javadoc，javap
 thanks
 https://www.jianshu.com/p/ee7e9176632c
 https://blog.csdn.net/manageer/article/details/72812149
+
+more soucce code https://blog.csdn.net/sinat_38259539/article/details/78120498
+
+how java run https://blog.csdn.net/xiangzhihong8/article/details/65657914 main gate in \jdk\src\share\bin\java.c
