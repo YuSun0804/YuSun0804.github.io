@@ -17,9 +17,9 @@ bash ./get_source.sh
 jdk source code.
 ![vm_directory]({{ "/assets/images/post/jdk_source.png" | absolute_url }})
 >src/   
-share/       平台无关的实现   
-classes/     平台无关的Java代码实现   
-native/      平台无关的native代码实现（主要是C） 
+  share/       平台无关的实现   
+    classes/     平台无关的Java代码实现   
+    native/      平台无关的native代码实现（主要是C） 
 
 two types of JNI call
 ```c
