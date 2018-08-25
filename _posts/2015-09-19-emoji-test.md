@@ -12,10 +12,10 @@ bash ./get_source.sh
 # Building & Debuging
 
 # Reading Source Code
-![vm_directory @10x]({{ "/assets/images/post/vm_directory.png" | absolute_url}})
+![vm_directory @2x]({{ "/assets/images/post/vm_directory.png" | absolute_url}})
 ## jdk
 jdk source code.
-![vm_directory @10x]({{ "/assets/images/post/jdk_source.png" | absolute_url }})
+![vm_directory @2x]({{ "/assets/images/post/jdk_source.png" | absolute_url }})
 >src/   
   share/       平台无关的实现   
     classes/     平台无关的Java代码实现   
@@ -37,13 +37,13 @@ return (*env)->GetObjectClass(env, this);
 
 ## hotspot
 vm source code.
-![vm_directory @10x]({{ "/assets/images/post/vm_source.png" | absolute_url }})
+![vm_directory @2x]({{ "/assets/images/post/vm_source.png" | absolute_url }})
 - first type call in jvm.cpp(share/vm/prims/jvm.cpp)
 - second type call in jni.cpp(src/share/vm/prims/jni.cpp)
 
 # langtools
 mainly for tools like java， javah，javadoc，javap
-![vm_directory @10x]({{ "/assets/images/post/langtools_source.png" | absolute_url }})
+![vm_directory @2x]({{ "/assets/images/post/langtools_source.png" | absolute_url }})
 
 
 thanks
