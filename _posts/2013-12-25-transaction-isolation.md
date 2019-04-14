@@ -26,7 +26,7 @@ The following contents should be invisible in home/archive page.
 https://blog.csdn.net/shudaqi2010/article/details/79958222
 
 MySQL的事务隔离级别定义都是针对读操作，并且读操作指的是“当前读”；MySQL的默认隔离级别RR使用Gap-Lock来解决幻读，Record-Lock解决脏读和可重复读；因此RR级别是通过Next-Key Lock(Gap-Lock + Record-Lock)实现的；MVCC机制是MySQL为实现一致性非锁定读，提高部分读写效率而引入的机制。
-MySQL中通过MVCC实现 RP和RC
+MySQL中通过MVCC实现 RR和RC
 
 不可重复读的重点是修改:
 同样的条件的select, 你读取过的数据, 再次读取出来发现值不一样了
