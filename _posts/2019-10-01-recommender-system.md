@@ -22,7 +22,7 @@ For CF, there are two categories called user-based method and item-based method.
 
 And another method called Content-based, to analyse the similarity between the items by TF-IDF.
 
-## Ranking Layer Methods
+## Ranking Layer Methods(lr、gbdt、fm、ffm、dnn、widedeep、dcn、deepfm)
 In terms of machine learning, logistic regression firstly is used for classfication task and we can treat the action of recommend as 1, while not recommend as 0. After that, tree model like GDBT and random tree are used for recommender systems. 
 
 
