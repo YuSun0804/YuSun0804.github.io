@@ -1,11 +1,11 @@
 ---
-title: a Review for Recommender Systems in Industry
+title: A Review for Recommender Systems in Industry
 description: review recommender system industry
 categories:
  - ML
  - DL
  - RL
- - AI
+ - RS
 tags:
 ---
 
