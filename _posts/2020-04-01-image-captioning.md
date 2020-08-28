@@ -38,8 +38,12 @@ For image captioning task, encoder can extract features from images with the hel
 
 ## References
 [1] S. Bai and S. An, “A survey on automatic image caption generation,” Neurocomputing, vol. 311, 05 2018.
+
 [2] Y. Yang, C. L. Teo, H. Daumé III, and Y. Aloimonos, “Corpus-guided sentence generation of natural images,” in Proceedings of the Conference on  Empirical Methods in Natural Language Processing, pp. 444–454, Association for Computational Linguistics, 2011.
+
 [3] O. Vinyals, A. Toshev, S. Bengio, and D. Erhan, “Show and tell: A neural image caption generator,” in Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 3156–3164, 2015.
+
 [4] Q. You, H. Jin, Z. Wang, C. Fang, and J. Luo, “Image captioning with semantic attention,” in Proceedings of the IEEE conference on computer vision and pattern recognition, pp. 4651–4659, 2016.
+
 [5] R. Kiros, R. Salakhutdinov, and R. S. Zemel, “Unifying visual-semantic embeddings with multimodal neural language models,” arXiv preprint arXiv:1411.2539, 2014.
 
