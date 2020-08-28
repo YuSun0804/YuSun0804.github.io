@@ -18,10 +18,10 @@ The whole system contains two main components, including business logic layer an
 
 We compared the sequence-to-sequence with the 4 kinds of CNN architectures as the encoders and the 2 kinds of RNN architectures as the decoders.For the CNN encoders, we used 4 kinds of pre-trained iamge processing models, including VGG16,InceptionV3,MobileNet and ResNet, to extract features from images into the hidden layer. For RNN decoders, we tried 2 common used models, including stacked LSTM and GRU with attention mechanism, to generate natural language description of the image from hidden layer. So, we got 8 models in total, which are summarized in the Table. Through the whole model, we can get natural language sentences directly from visual data without any other steps.
 
-| 左对齐 | 右对齐 | 居中对齐 |
-| :-----| ----: | :----: |
-| 单元格 | 单元格 | 单元格 |
-| 单元格 | 单元格 | 单元格 |
+|    name    | age |
+| ---------- | --- |
+| LearnShare |  12 |
+| Mike       |  32 |
 ## Model Evaluation
 
 
