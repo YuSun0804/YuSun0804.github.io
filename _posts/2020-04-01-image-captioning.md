@@ -32,7 +32,7 @@ For encoders, we used pre-trained models with transfer learning and deleted the 
 
 For image captioning task, encoder can extract features from images with the help of convolutional neural network. These features can work as initial hidden state to feed into the RNN decoder. With the start token, the decoder can predict the next caption word one by one until meeting the end token. In training step, after one word is generated, the RNN will move into the next unit and the input of next unit is the original word in previous unit position from the dataset caption which related to this certain image. In predicting step, after one word is generated, the input of next unit is the predicted word in the previous unit. So there is a small difference between training and predicting steps.
 
-![vm_directory @2x]({{ "/assets/images/post/model.png" | absolute_url }})
+![vm_directory @8x]({{ "/assets/images/post/model.png" | absolute_url }})
 
 
 
