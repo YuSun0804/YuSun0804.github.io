@@ -13,14 +13,19 @@ About image captioning, there are three well-studied approaches to automatic ima
 like seq-2-seq model has been used to solve this problem, motivated by the neural machine translation. Kiros et al. brought the encoder-decoder framework into image captioning area by unifying joint image-text embedding models through multimodal neural language models. Vinyals et al. used to CNN as encoder and LSTM as decoder for image captioning, by the pre-trained image representation and treating the last hidden layer as input to the decoder. You et al. proposes a new image captioning approach that combines the top-down and bottom-up approaches through a semantic attention model. Automatic image captioning is a relatively new task, the network with encoder and decoder is widely used in this area, currently. Besides, some improvement tricks like attention mechanisms used in other areas like machine translation can also apply in image captioning.
 
 
-## System Architecture(Online & Offline)
-About the architecture of recommender systems, it is a difficult problem in industry. There are two main components called recall layer and ranking layer.
+## System Architecture
+The whole system contains two main components, including business logic layer and model layer. For the business logic layer, it is mainly used to interact with end-user, and in Model Layer build a generic encoder-decoder model combining some CNN architectures and RNN architectures.
+
+We compared the sequence-to-sequence with the 4 kinds of CNN architectures as the encoders and the 2 kinds of RNN architectures as the decoders.For the CNN encoders, we used 4 kinds of pre-trained iamge processing models, including VGG16,InceptionV3,MobileNet and ResNet, to extract features from images into the hidden layer. For RNN decoders, we tried 2 common used models, including stacked LSTM and GRU with attention mechanism, to generate natural language description of the image from hidden layer. So, we got 8 models in total, which are summarized in the Table. Through the whole model, we can get natural language sentences directly from visual data without any other steps.
+
+| 左对齐 | 右对齐 | 居中对齐 |
+| :-----| ----: | :----: |
+| 单元格 | 单元格 | 单元格 |
+| 单元格 | 单元格 | 单元格 |
+## Model Evaluation
 
 
-
-
-
-#### References
+## References
 https://static.googleusercontent.com/media/research.google.com/ru//pubs/archive/45530.pdf
 https://zhuanlan.zhihu.com/p/58160982
 https://zhuanlan.zhihu.com/p/100019681
