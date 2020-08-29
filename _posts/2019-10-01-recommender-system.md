@@ -17,7 +17,7 @@ About the architecture of recommender systems, it is a difficult problem in indu
 
 
 
-### Recall Layer Methods(Memory-based Collaborative Filtering,Model-based collaborative filtering, DNN)
+#### Recall Layer Methods(Memory-based Collaborative Filtering,Model-based collaborative filtering, DNN)
 
 There are two main method used in recommender systems, including Collaborative Filtering Recommendation and Content-based Recommendation. 
 
@@ -25,7 +25,7 @@ For CF, there are two categories called user-based method and item-based method.
 
 And another method called Content-based, to analyse the similarity between the items by TF-IDF.But some type of material is hard to definied the content except text.
 
-### Ranking Layer Methods(lr、gbdt、fm、ffm、dnn、widedeep、dcn、deepfm)
+#### Ranking Layer Methods(lr、gbdt、fm、ffm、dnn、widedeep、dcn、deepfm)
 
 In terms of machine learning, logistic regression firstly is used for classfication task and we can treat the action of recommend as 1, while not recommend as 0. After that, tree model like GDBT and random tree are used for recommender systems.
 
