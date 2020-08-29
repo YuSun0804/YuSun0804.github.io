@@ -1,6 +1,6 @@
 ---
 title: A Approach of Image Captioning System
-description: The blog is going to build a web system that can automatically generate natural language description for the image. In the whole system, the core component is building an image captioning model to process the image.
+description: The blog is going to illustrate how to build a system, which can automatically generate natural language description for the image. In the whole system, the core component is building an image captioning model to process the image.
 categories:
  - NLP
  - CV
