@@ -12,8 +12,10 @@ tags:
 ## Introduction
 Recommender system is very important in today's digital world, which helps the user to find their interested products, movies, musics in varied web platform. The main idea and goal of recommender systems is to utilize these various sources of data to infer customer interests. There are various techniques and approaches which have been implemented for recommender systems. 
 
-## Architecture(Online & Offline)
-About the architecture of recommender systems, it is a difficult problem in industry. There are two main components called recall layer and ranking layer.
+## Architecture
+About the architecture of recommender systems, it is a difficult problem in industry. There are two main components called recall layer and ranking layer. 
+![vm_directory @8x]({{ "/assets/images/post/rs.png" | absolute_url }})
+
 
 
 
