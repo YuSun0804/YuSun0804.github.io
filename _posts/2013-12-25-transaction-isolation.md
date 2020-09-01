@@ -2,11 +2,10 @@
 title: Excerpts
 date: 2013-12-25 00:23:23
 tags:
+visible: 1
 ---
 
 The following contents should be invisible in home/archive page.
-
-<!-- more -->
 
 | Read uncommitted | Read committed | Repeatable read | Serializable
 | ------ | ------ | ------ | ------ |
@@ -36,6 +35,10 @@ MySQL中通过MVCC实现 RR和RC
 对于前者, 在RC下只需要锁住满足条件的记录，就可以避免被其它事务修改，也就是 select for update, select in share mode; RR隔离下使用MVCC实现可重复读；
 对于后者, 要锁住满足条件的记录及所有这些记录之间的gap，也就是需要 gap lock。
 https://blog.csdn.net/joy0921/article/details/80128857
+
+<!-- more -->
+
+
 
 
 
