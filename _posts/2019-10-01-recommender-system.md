@@ -16,8 +16,7 @@ Recommender system is very important in today's digital world, which helps the u
 About the architecture of recommender systems, it is a difficult problem in industry. There are two main components called recall layer and ranking layer. 
 ![vm_directory @8x]({{ "/assets/images/post/rs.png" | absolute_url }})
 
-
-
+The first is recall layer, which is mainly based on part of the user's characteristics. From the massive inventory, quickly retrieve a small part of the user's potentially interesting items, and then hand it over to the ranking layer. The ranking layer can incorporate more features and use complex models for accuracy. Make personalized recommendations. Recall emphasizes fast, ranking emphasizes accuracy.
 
 #### Recall Layer Methods(Memory-based Collaborative Filtering,Model-based collaborative filtering, DNN)
 
