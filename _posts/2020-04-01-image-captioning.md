@@ -4,7 +4,7 @@ categories:
  - NLP
  - CV
  - DL
-tags:[NLP]
+tags: [NLP]
 ---
 
 ## Introduction
