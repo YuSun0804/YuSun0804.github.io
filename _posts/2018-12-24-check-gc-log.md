@@ -1,30 +1,41 @@
 ---
-title: Check GC Log
+title: GC Log Analysis
 categories:
-- 
+- Java
 tags:
 ---
 
-# gdb
-# string 
+# Introduction
+This blog is going to show how to read the gc log both in java7 and java8. Firstly, if we want to learn gc log better, we need to sse below parameters to print the timestamp and detail info:
+- -XX:+PrintGCDetails
+- -XX:+PrintGCTimeStamps
+In java7, we usually use ParNew(Copying) for young area, and CMS(Mark-Sweep) for old area; while in java8, G1 is widely used for young and old area.
 
-给CMS GC搭配-XX:+PrintGCDetails和-XX:+PrintGCTimeStamps可以打印出很多关于GC的信息.理解GC日志信息可以帮助日常的性能调优以达到最优的性能。
-
-下面就来看下gc日志的详情:
-
+# Young GC
+```
 39.910: [GC 39.910: [ParNew: 261760K->0K(261952K), 0.2314667 secs] 262017K->26386K(1048384K), 0.2318679 secs]
-上面是年轻代(ParNew)回收信息,年轻代总大小261952Kb,垃圾回收后使用量从261970Kb到0Kb,整个回收过程花费0.2318679秒。
+```
 
+Size of young area is 261952Kb, after gc the used memory decrease from 261970Kb to 0Kb, with 0.2318679 second consumed.
+
+# Old GC
+```
 40.146: [GC [1 CMS-initial-mark: 26386K(786432K)] 26404K(1048384K), 0.0074495 secs]
-现在开始的是使用CMS收集器对老年代做的回收,老年代的容量是786432Kb，占用量是26386Kb时触发了老年代的收集。这是CMS过程的初始标记阶段,这个阶段会停止所有应用线程(stop-the-world)，该阶段单线程执行,主要做两件事情:
+```
+Starting the old gc of initial-mark, with size of young area is 786432Kb, used memory before gc is 26386Kb. This phrase is stop-the-world and process by one thread. there are two things to do:
+1. marking the object link by the root directly
+2. marking the object link by the yound area object
 
-标记GC根节点可以直接引用的对象；
-遍历新生代对象,标记可达的老年代对象。
+```
 40.154: [CMS-concurrent-mark-start]
-这是并发标记过程的开始，在初始标记阶段停止的线程在这个阶段会重新启动,这个阶段应用线程和GC线程并行执行,多个GC线程并发标记活跃的对象。
+```
+Starting the concurrent-mark, gc thread and application thread execute concurrently.
 
+```
 40.683: [CMS-concurrent-mark: 0.521/0.529 secs]
-并发标记阶段总共花费了0.521秒。因为该阶段是并发执行的,运行期间可能会在老年代产生新的垃圾，或者老年代的对象被新生代对象重新引用,这些对象都是要重新标记的，有以下几种场景:
+```
+The concurrent-mark is end, cost 0.521 second.
+因为该阶段是并发执行的,运行期间可能会在老年代产生新的垃圾，或者老年代的对象被新生代对象重新引用,这些对象都是要重新标记的，有以下几种场景:
 
 新生代对象晋升到老年代
 新生代新创建对象引用了原先老年代未被标记的对象
