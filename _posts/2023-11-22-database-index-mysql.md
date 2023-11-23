@@ -27,7 +27,7 @@ B + Tree is a variation of the B-tree data structure, it has following specialit
 * only leaf nodes store data values/pointers. (in B Tree, data values/pointers store with key together, maybe at non-leaf nodes)
 * the leaf nodes are linked to providing ordered access to the records, which can improve range query. 
 
-![vm_directory @8x]({{ "/assets/images/post/database-index/mysql-1.drawio.svg" | absolute_url }})
+![vm_directory @1x]({{ "/assets/images/post/database-index/mysql-1.drawio.svg" | absolute_url }})
 
 For most of the relational databases like MySQL, Oracle, they use B+ Tree for their index. In general, the index itself is also very large and cannot be all stored in memory, so the index is often stored on disk in the form of index files. In this way, the index search process will produce disk I/O consumption, relative to memory access, I/O access consumption is several orders of magnitude higher, so the most important indicator to evaluate a data structure as an index is the gradual complexity of the number of disk I/O operations in the search process. In other words, the index is structured to minimize the number of disk I/O accesses during lookup.
 
@@ -37,10 +37,10 @@ Let us use MySQL as an example, there are two mainly used database engines: MyIS
 
 ### MySQL InnoDB
 In InnoDB, it clusters the Primary Key with the data (clustered index). This says that a PK lookup can rapidly get to the entire row. A secondary key lookup, however, has to go through 2 BTree lookups -- one in the secondary key's BTree, then a second in the PK's BTree.
-![vm_directory @8x]({{ "/assets/images/post/database-index/mysql-2.drawio.svg" | absolute_url }})
+![vm_directory @1x]({{ "/assets/images/post/database-index/mysql-2.drawio.svg" | absolute_url }})
 
 
-![vm_directory @8x]({{ "/assets/images/post/database-index/mysql-4.drawio.svg" | absolute_url }})
+![vm_directory @1x]({{ "/assets/images/post/database-index/mysql-4.drawio.svg" | absolute_url }})
 
 We can see the page size on InnoDB is 16 k, and the size of a B-Tree node is chosen according to the page size. Because a whole page of data would read even if only reading a few bits.
 
@@ -48,7 +48,7 @@ We can see the page size on InnoDB is 16 k, and the size of a B-Tree node is cho
 
 ### MySQL MyISAM
 In MyISAM, the data areas of B-Tree leaf node are not the real data, it is a pointer to a `.MYD` file.
-![vm_directory @8x]({{ "/assets/images/post/database-index/mysql-3.drawio.svg" | absolute_url }})
+![vm_directory @1x]({{ "/assets/images/post/database-index/mysql-3.drawio.svg" | absolute_url }})
 
 
 ## Best Practice
