@@ -21,7 +21,7 @@ unclustered indexes
 clustered indexes
 
 Minimum storage unit
-![vm_directory @8x]({{ "/assets/images/_post/d2.svg" | absolute_url }})
+![vm_directory @8x]({{ "/assets/images/post/database-index/1.svg" | absolute_url }})
 
 We can see the page size on InnoDB is 16 k, and the size of a B-Tree node is chosen according to the page size. Because a whole page of data would read even if only reading a few bits.
 
