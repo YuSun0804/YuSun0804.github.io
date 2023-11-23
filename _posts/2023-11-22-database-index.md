@@ -18,11 +18,14 @@ For most of the relational databases like MySQL, they use B+ Tree for their inde
 unclustered indexes
 
 ### MySQL InnoDB
+clustered indexes
 
 Minimum storage unit
-![vm_directory @8x]({{ "/imgs/d2.svg" | absolute_url }})
+![vm_directory @8x]({{ "./images/d2.svg"}})
 
-clustered indexes
+We can see the page size on InnoDB is 16 k, and the size of a B-Tree node is chosen according to the page size. Because a whole page of data would read even if only reading a few bits.
+
+
 
 data BTree node
 index BTree node
