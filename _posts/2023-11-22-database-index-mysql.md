@@ -56,17 +56,13 @@ In general, when we use MySQL, we usually care about the ACID traction, so in th
 
 ### Index for Search
 
-* Case 1 Full Column Match
-All where clauses are coverred by a composite index with `=` or `IN` query will definately use the index, with respect to leftmost rule.
+* Case 1 Full Column Match: All where clauses are coverred by a composite index with `=` or `IN` query will definately use the index, with respect to leftmost rule.
 
-* Case 2 String Match Query
-`LIKE 'Senior%'` could use index.
+* Case 2 String Match Query: `LIKE 'Senior%'` could use index.
 
-* Case 3 Range Query
-Only one column can use index at most.
+* Case 3 Range Query: Only one column can use index at most.
 
-* Case 4 Function Query
-Cannot use index when where clause contains function 
+* Case 4 Function Query: Cannot use index when where clause contains function 
 
 ### Index for Order
 
