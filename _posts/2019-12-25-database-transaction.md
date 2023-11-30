@@ -37,6 +37,12 @@ Analysis: The repeated read can solve the unrepeatable read problem. Writing her
 Ensures that changes to your data made by successfully executed transactions will be saved, even in the event of system failure.
 
 ## Methodologies
+### transaction ID
+For each transaction, it must be monotone increased, some methds can be used:
+* server timestamp
+* clinet timestamp
+* snowflake ID
+
 ### WAL
 Write Ahead Log (WAL) is a common method used in database systems to ensure the atomicity and persistence of data operations.
 
@@ -59,6 +65,9 @@ MVCC is mainly used for write-read conflict, to solve write-write conflict, the 
 ### LWW
 Latest write win is a pretty brust force way without using locking or MVCC to handle concurrency of write conflict, which has been used on early-aged NoSQL database.
 
+### 2PC
+cooperative termination protocol
+
 ## Applications
 ### MySQL
 It is worth mentioning that the default transaction isolation level of most databases is Read committed, such as Sql Server and Oracle. The default isolation level for Mysql is Repeatable read.
@@ -79,6 +88,12 @@ MySQL's default isolation level RR uses Gap-Lock for phantom reads and Record-Lo
 MySQL uses MVCC to implement RR and RC. The read in MySQL is divided by snapshot read and current read.
 
 ### Cassandra
+Cassandra only support row-level AID (with C since it doesn't support foreign key).
+
+### MongoDB
+
+
+### Spanner
 
 
 

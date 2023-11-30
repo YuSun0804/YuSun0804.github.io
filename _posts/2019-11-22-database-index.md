@@ -1,5 +1,5 @@
 ---
-title: Database Index Structure
+title: Database Index
 categories:
  - Database
 tags: [Database Index, MySQL, Cassandra]
