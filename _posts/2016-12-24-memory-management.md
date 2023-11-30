@@ -1,7 +1,8 @@
 ---
 title: Memory Management
 categories:
-tags:
+- Operation Systems
+tags: [Operation Systems, Memory]
 ---
 
 # Introduction
@@ -11,5 +12,6 @@ tags:
 1. allocate memory in process
 2. delay allocating
 3. mapping virtual address to physical address
+
 # Physical Memory Management
 

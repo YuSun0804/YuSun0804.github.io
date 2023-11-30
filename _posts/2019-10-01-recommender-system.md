@@ -1,11 +1,8 @@
 ---
 title: A Review for Recommender Systems
 categories:
- - ML
- - DL
- - RL
- - RS
-tags:
+ - AI
+tags: [Recommender System]
 ---
 
 ## Introduction

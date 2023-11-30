@@ -1,7 +1,8 @@
 ---
 title: Off-Heap Memory
 categories:
-tags:
+- Operation Systems
+tags: [Memory]
 ---
 
 # Introduction

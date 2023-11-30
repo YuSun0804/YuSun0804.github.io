@@ -1,10 +1,8 @@
 ---
 title: An Approach of Image Captioning System
 categories:
- - NLP
- - CV
- - DL
-tags: [AI]
+ - AI
+tags: [NLP]
 ---
 
 ## Introduction

@@ -1,8 +1,8 @@
 ---
 title: GC Log Analysis
 categories:
-- Java
-tags:
+- JVM
+tags: [JVM, CMS]
 ---
 
 # Introduction

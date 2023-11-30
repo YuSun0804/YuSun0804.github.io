@@ -1,6 +1,8 @@
 ---
 title: Build OpenJDK
-tags:
+categories:
+- JVM
+tags: [JVM, OpenJDK]
 ---
 
 # Download Souce Code

@@ -1,7 +1,7 @@
 ---
 title: Memory Leak Problem Analysis
 categories:
-- 
+- JVM
 tags:
 
 ---
