@@ -9,11 +9,19 @@ tags: [Database HA, MySQL, Cassandra, Spanner]
 The real difficulty and pain point of system high availability design is not the design of stateless service, but the high availability design of database, because:
 
 * data persistence in the database, is a stateful service;
-* the capacity of the database is large, and the Failover duration is longer than that of stateless services.
+* the capacity of the database is large, and the failover duration is longer than that of stateless services.
 * some systems, such as databases in financial scenarios, require that data cannot be lost at all, which makes it difficult to achieve high availability.
 In fact, from the perspective of architecture, the database high availability itself is also the business high availability.
 
+The requirements of HA:
+* If the database is down or unexpectedly interrupted, the availability of the database can be restored as soon as possible to minimize the downtime and ensure that services are not interrupted due to database faults.
+* The data on the non-primary node used for backup and read-only copy must be consistent with the data on the primary node in real time or in the end.
+* When services are switched over, the contents of the database before and after the switchover must be the same. Services will not be affected due to data loss or data inconsistency.
+
 ## Methodologies
+It is not easy to implement HA both theoretically and industrially. For different databases, they could use different way to implement HA, but they usually follow similar principles. Let us take a look at simple case first with only DB and multiple application server. All requests would be on the the same DB.
+![vm_directory @1x]({{ "/assets/images/post/database-hb/ha1.drawio.svg" | absolute_url }})
+
 
 ### Replication
 The first idea to improve availability is adding some backup/slave ndoes, which replicate the data in the database (master). There are couples of methods:
