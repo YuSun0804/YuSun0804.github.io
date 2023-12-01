@@ -45,12 +45,13 @@ Then for new leader selection, centralized system is easy, the controller node w
 Before we mention horizontal Scale, let us first take a look at vertical scale, often known as “scaling up,” is the process of increasing the power of an existing system, such as the CPU or RAM, to meet the rising demands. Because there is no need to alter the logic, vertical scaling is simpler. Instead, you are only executing the same code on machines with more capacity.
 
 Horizontal scale is also called scale-out, it divides the whole database into multiple shardings/partitions.
+![vm_directory @1x]({{ "/assets/images/post/database-ha/scale.drawio.svg" | absolute_url }})
 
 #### Sharding
 When a database has multiple shardings, it will need a way to know which shard has which data. Consistent hashing is a special hashing algorithm. After using the consistent hashing algorithm, a change in the number of slots (size) in the hash table requires on average only a remapping of K/n keywords, where K is the number of keywords and n is the number of slots. However, in a traditional hash table, adding or removing a slot requires remapping almost all keywords.
 
 #### Routing
-After we split a whole data into multiple partitions, we need to a place to store which partition is on which node. In centralized system, the controller node can also be metadata node, which store all partition information. Then it can put routing logic in client-side, server-side or even add a new layer in between. For decentralized node, each node shares the metadata information by gossip protocol, it always use server-side routing.
+After we split a whole data into multiple partitions, we need to a place to store which partition is on which node. In centralized system, the controller node can also be metadata node, which store all partition information. Then it can put routing logic in client-side, server-side (not usually) or even add a new layer in between. For decentralized node, each node shares the metadata information by gossip protocol, it always use server-side routing.
 
 
 ## Applications
