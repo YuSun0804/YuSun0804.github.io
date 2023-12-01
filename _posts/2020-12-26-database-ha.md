@@ -20,7 +20,7 @@ The requirements of HA:
 
 ## Methodologies
 It is not easy to implement HA both theoretically and industrially. For different databases, they could use different way to implement HA, but they usually follow similar principles. Let us take a look at simple case first with only DB and multiple application server. All requests would be on the the same DB.
-![vm_directory @1x]({{ "/assets/images/post/database-hb/ha1.drawio.svg" | absolute_url }})
+![vm_directory @1x]({{ "/assets/images/post/database-ha/ha1.drawio.svg" | absolute_url }})
 
 
 ### Replication
