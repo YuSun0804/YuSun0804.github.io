@@ -6,17 +6,24 @@ tags: [Database Index, MySQL, Cassandra]
 ---
 
 ## Introduction
-Index is a data structure that helps the database system obtain data efficiently. It improves the data retrieval process in the database at the cost of adding additional write operations and storage space for maintaining the index data structure. To search an entry, database would search the index for the entry first, and index is pointing to real physical location of the entry. It’s also important to note that indexing doesn’t come without a cost, indexes take up disk space and can increase the time it takes to insert or update data.
+An index is a data structure designed to enhance the efficiency of data retrieval in a database system. While it optimizes the data retrieval process, it does so at the expense of introducing extra write operations and requiring additional storage space to maintain the index data structure. There are several methods to implement indexes in various database systems, and different data structures can also be employed. This article will concentrate on exploring index methodologies and their applications.
 
 
 ## Methodologies
+This section primarily focuses on the data structures of various indexing methods, specifically explaining how indexes are stored in a file system or memory. An index usually establishes a connection to the original data. It may store the original data alongside the index in various ways or use a pointer to indicate the data's location. Consequently, by understanding the organization of the index, we can also discern how the original data is structured.
+
+### Hash
+When discussing search in general, two types of search scenarios commonly arise: point search and range search. A Hash index excels at point search; if all indexes reside in memory, it facilitates random addition, deletion, modification, and search, with a time complexity for reading and writing of `O(1)`. However, it is not well-suited for range search due to its lack of order.
+
 ### Binary Search Tree
-When we talk about search, in general, there are two types of search senarios: point search and range search, so the first data structure might be binary seach tree. The defination of BST is a tree has following properties:
+The next data structure to consider is the binary search tree (BST), which imposes an implicit order among all its nodes. The definition of a BST includes the following properties:
 * The left subtree of a node contains only nodes with values lesser than the node’s value.
 * The right subtree of a node contains only nodes with values greater than the node’s value.
 * The left and right subtree each must also be a binary search tree.
 
-The complexity analysis of BST shows that, on average, the insert, delete and search takes `O(logn)` for n nodes. In the worst case, they degrade to that of a singly linked list: `O(n)`. So if we can get a binary search tree with lower height, we would get a better search performance. AVL tree and red-black tree are two kinds of balanced BST, they both sacrifice the performance of insert/delete to get a better search performance. RBT would get a balanced performance among all operations, so it is widely used in-memory search (even there would be some improvements).  
+The complexity analysis of a BST reveals that, on average, the operations of insert, delete, and search take O(logn) for n nodes. However, in the worst case, these operations can degrade to that of a singly linked list, resulting in a time complexity of O(n). To enhance search performance, it is desirable to obtain a binary search tree with a lower height.
+
+AVL trees and red-black trees are two types of balanced BSTs designed to address this issue. They both introduce a level of balance, though at the cost of slightly slower insert and delete operations, aiming to achieve better search performance. Among them, red-black trees strive for a more balanced performance across all operations, making them widely utilized in in-memory search applications, with ongoing efforts for further enhancements.
 
 ### B-Tree, B+ Tree
 But if we get more data which cannot fit all in memory, then we need to read data from disk, things are chagned. Reading from disk is much slower than from memory. B-tree is a balanced multi-way search tree, the biggest difference between B-tree and red-black tree is that B-tree nodes can have multiple children, from a few to several thousand.
@@ -31,6 +38,9 @@ B + Tree is a variation of the B-tree data structure, it has following specialit
 ![vm_directory @1x]({{ "/assets/images/post/database-index/btree.drawio.svg" | absolute_url }})
 
 For most of the relational databases like MySQL, Oracle, they use B+ Tree for their index. In general, the index itself is also very large and cannot be all stored in memory, so the index is often stored on disk in the form of index files. In this way, the index search process will produce disk I/O consumption, relative to memory access, I/O access consumption is several orders of magnitude higher, so the most important indicator to evaluate a data structure as an index is the gradual complexity of the number of disk I/O operations in the search process. In other words, the index is structured to minimize the number of disk I/O accesses during lookup.
+
+There are two ways to originize indexs: clustered index and non-clustered index. 
+
 
 ### LSM Tree
 We have already talked about B Tree Index in MySQL, in this article, I am going to talk about the index techonoly in Cassandra, LevelDB and RocksDB: LSM Tree (The Log-Structured Merge-Tree). It needs to split and re-balance the tree when inserting a new node in B Tree, which could cause lots of random IO, so the insert performance could be degraded. LSM tree is a good way to solve the problem with sacrificing read performance. Besides, B Tree stack also update existing data in place, which also causes some random IO.
@@ -89,6 +99,9 @@ In MyISAM, the data areas of B-Tree leaf node are not the real data, it is a poi
 
 ### Cassandra
 The primary key in Cassandra is divided by partition key and clustering key. Besides, Cassandra also supports secondary index, and usually there are two methods to implement secondary index: Global Index and Local Index. Cassandra chooses the later, and it is tricky to use and can impact performance greatly. The index table is stored on each node in a cluster, so a query involving a secondary index can rapidly become a performance nightmare if multiple nodes are accessed.
+
+
+## Conclusion
 
 
 
