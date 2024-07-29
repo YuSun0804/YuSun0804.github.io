@@ -13,7 +13,7 @@ An index is a data structure designed to enhance the efficiency of data retrieva
 This section primarily focuses on the data structures of various indexing methods, specifically explaining how indexes are stored in a file system or memory. An index usually establishes a connection to the original data. It may store the original data alongside the index in various ways or use a pointer to indicate the data's location. Consequently, by understanding the organization of the index, we can also discern how the original data is structured.
 
 ### Hash
-When discussing search in general, two types of search scenarios commonly arise: point search and range search. A Hash index excels at point search; if all indexes reside in memory, it facilitates random addition, deletion, modification, and search, with a time complexity for reading and writing of `O(1)`. However, it is not well-suited for range search due to its lack of order.
+When considering search in a broader context, two common scenarios emerge: point search and range search. Hash indexes are particularly proficient in point search and are widely used in in-memory caches. When all indexes are in memory, it supports random addition, deletion, modification, and search, exhibiting a time complexity for reading and writing of `O(1)`. However, it is not well-suited for range search due to its lack of order.
 
 ### Binary Search Tree
 The next data structure to consider is the binary search tree (BST), which imposes an implicit order among all its nodes. The definition of a BST includes the following properties:
@@ -21,16 +21,16 @@ The next data structure to consider is the binary search tree (BST), which impos
 * The right subtree of a node contains only nodes with values greater than the node’s value.
 * The left and right subtree each must also be a binary search tree.
 
-The complexity analysis of a BST reveals that, on average, the operations of insert, delete, and search take O(logn) for n nodes. However, in the worst case, these operations can degrade to that of a singly linked list, resulting in a time complexity of O(n). To enhance search performance, it is desirable to obtain a binary search tree with a lower height.
+The complexity analysis of a BST reveals that, on average, the operations of insert, delete, and search take `O(logn)` for n nodes. However, in the worst case, these operations can degrade to that of a singly linked list, resulting in a time complexity of `O(n)`. To enhance search performance, it is desirable to obtain a binary search tree with a lower height.
 
 AVL trees and red-black trees are two types of balanced BSTs designed to address this issue. They both introduce a level of balance, though at the cost of slightly slower insert and delete operations, aiming to achieve better search performance. Among them, red-black trees strive for a more balanced performance across all operations, making them widely utilized in in-memory search applications, with ongoing efforts for further enhancements.
 
 ### B-Tree, B+ Tree
-But if we get more data which cannot fit all in memory, then we need to read data from disk, things are chagned. Reading from disk is much slower than from memory. B-tree is a balanced multi-way search tree, the biggest difference between B-tree and red-black tree is that B-tree nodes can have multiple children, from a few to several thousand.
+However, when dealing with larger datasets that cannot entirely fit into memory, the dynamics change. Reading data from disk is considerably slower than reading from memory. A B-tree, characterized as a balanced multi-way search tree, differs significantly from a red-black tree in that B-tree nodes can have multiple children, ranging from a few to several thousand.
 * It is perfectly balanced: every leaf node is at the same depth.
 * Every node, except perhaps the root, is at least half-full, i.e. contains M/2 or more values (of course, it cannot contain more than M-1 values). The root may have any number of values (1 to M-1).
 
-B + Tree is a variation of the B-tree data structure, it has following specialities:
+B+ Tree is a variation of the 3-tree data structure, it has following specialities:
 * leaf nodes store all key values, so some of the key values of the leaf nodes also appear in the internal nodes. (B Tree doesn't duplicated key values at leaf nodes)
 * only leaf nodes store data values/pointers. (in B Tree, data values/pointers store with key together, maybe at non-leaf nodes)
 * the leaf nodes are linked to providing ordered access to the records, which can improve range query. 
